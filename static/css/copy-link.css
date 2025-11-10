@@ -1,0 +1,53 @@
+/* ================================================= */
+/* === СТИЛИ ДЛЯ КНОПКИ КОПИРОВАНИЯ И СООБЩЕНИЯ === */
+/* ================================================= */
+
+#copy-link-container {
+    text-align: center;
+    margin: 10px 0 20px 0; /* Отступы для отделения от заголовка и контента */
+    position: relative;
+}
+
+#copyButton {
+    /* Наследует стили .beautiful-button, но я уменьшу шрифт для этой кнопки */
+    padding: 8px 18px;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.copy-message {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--button-primary-bg); /* Используем цвет кнопки */
+    color: var(--button-primary-color);
+    border-radius: 4px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Не блокировать клики под ним */
+}
+
+.copy-message.visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(10px); /* Небольшой сдвиг для эффекта */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+    #copyButton {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .copy-message {
+        top: calc(100% + 5px); /* Перемещаем сообщение вниз на мобильных */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .copy-message.visible {
+        transform: translateX(-50%); /* Убираем лишний сдвиг */
+    }
+}

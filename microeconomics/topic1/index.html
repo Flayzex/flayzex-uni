@@ -9,8 +9,9 @@
     <meta property="og:description" content="Микроэкономика: Тема 1">
 
     <!-- Change -->
-    <meta property="og:image" content="https://flayzex-uni/static/images/flayzex-logo.png">
-    <meta property="og:url" content="https://flayzex-uni/microeconomics/topic1/">
+    <meta property="og:image"
+        content="https://flayzex-uni.vercel.app/static/images/flayzex-logo.png">
+    <meta property="og:url" content="https://flayzex-uni.vercel.app/microeconomics/topic1/">
     <!-- Change -->
 
     <meta property="og:type" content="website">
@@ -19,12 +20,14 @@
     <meta name="twitter:description" content="Микроэкономика: Тема 1">
 
     <!-- Change -->
-    <meta name="twitter:image" content="https://flayzex-uni/static/images/flayzex-logo.png">
+    <meta name="twitter:image"
+        content="https://flayzex-uni.vercel.app/static/images/flayzex-logo.png">
     <!-- Change -->
 
     <title>Микроэкономика: Тема 1</title>
     <link rel="icon" type="image/png" href="../../static/images/erasebg-transformed.png">
     <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/copy-link.css">
 </head>
 
 <body>
@@ -41,6 +44,13 @@
             <button type="submit" id="search-button">Искать (Next)</button>
             <span id="search-results-count" style="margin-left: 15px; font-weight: bold;"></span>
         </form>
+    </div>
+
+    <div id="copy-link-container">
+        <button id="copyButton" class="beautiful-button">
+            🔗 Копировать ссылку на текущую страницу
+        </button>
+        <span id="copyMessage" class="copy-message"></span>
     </div>
 
     <div id="faq-container">
@@ -185,6 +195,7 @@
 
     <script src="../../static/js/dark-theme.js"></script>
     <script src="../../static/js/search.js"></script>
+    <script src="../../static/js/copy-link.js"></script>
 
 </body>
 

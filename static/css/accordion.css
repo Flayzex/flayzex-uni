@@ -1,0 +1,90 @@
+/* ================================================= */
+/* === 4. СТИЛИ АККОРДЕОНА (Flayzex + переменные) === */
+/* ================================================= */
+
+.accordion {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+    overflow: hidden;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-bottom: 10px;
+}
+
+/* Заголовок */
+.question-header {
+    background-color: var(--block-bg);
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.05em;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.question-header:hover {
+    background-color: var(--search-bg);
+}
+
+/* Активный заголовок */
+.accordion-item.active .question-header {
+    background-color: var(--search-bg);
+    color: var(--secondary-header-color);
+}
+
+/* Иконка стрелки */
+.question-header .icon {
+    font-size: 1.2em;
+    color: var(--secondary-header-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .question-header .icon {
+    transform: rotate(90deg);
+}
+
+/* Контент */
+.answer-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 0.95em;
+    border-left: 5px solid var(--text-color);
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+/* Плавное раскрытие */
+.answer-content.show {
+    max-height: 2000px;
+    padding: 5px 20px;
+}
+
+/* Анимация появления текста */
+.answer-content p,
+.answer-content ul {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.answer-content.show p,
+.answer-content.show ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Списки внутри */
+.answer-content ul {
+    margin: 10px 0 10px 20px;
+    padding: 0;
+}

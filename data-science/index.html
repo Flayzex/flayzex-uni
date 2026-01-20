@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Flayzex">
+    <meta property="og:description" content="ИК Анализ Данных: Теория">
+
+    <!-- Change -->
+    <meta property="og:image" content="https://uni.flayzex.org/static/images/flayzex-logo.png">
+    <meta property="og:url" content="https://uni.flayzex.org/data-science/">
+    <!-- Change -->
+
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flayzex">
+    <meta name="twitter:description" content="ИК Анализ Данных: Теория">
+
+    <!-- Change -->
+    <meta name="twitter:image"
+        content="https://flayzex-uni.vercel.app/static/images/flayzex-logo.png">
+    <!-- Change -->
+
+    <title>ИК Анализ Данных: Теория</title>
+    <link rel="icon" type="image/png" href="../../static/images/erasebg-transformed.png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/accordion.css">
+
+</head>
+
+<body>
+
+    <button id="themeToggle" class="theme-toggle-button">
+        <span class="icon" id="themeIcon">☀️</span>
+        <span id="themeText">Тёмная тема</span>
+    </button>
+
+
+    <div id="search-bar-container">
+        <form id="page-search-form">
+            <input type="text" id="search-input" placeholder="Найти на странице..." autofocus>
+            <button type="submit" id="search-button">Искать (Next)</button>
+            <span id="search-results-count" style="margin-left: 15px; font-weight: bold;"></span>
+        </form>
+    </div>
+
+    <div id="faq-container">
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>1. Дайте определение случайного события и приведите пример из
+                    экономики.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Случайное событие</b> — это любой исход эксперимента, который при реализации
+                    определенных условий может <b>произойти или не произойти</b>. <b>Пример:</b>
+                    банкротство предприятия в текущем квартале или резкое изменение курса валют.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>2. Что такое вероятность и как она интерпретируется в статистике?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Вероятность</b> — числовая мера объективной возможности наступления события
+                    ($0 \le P(A) \le 1$). В статистике она интерпретируется как <b>предел
+                        относительной частоты</b> появления события при бесконечном повторении
+                    испытаний.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>3. Сформулируйте правило сложения и произведения событий.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Правило сложения:</b> для любых событий $P(A+B) = P(A) + P(B) - P(AB)$.
+                    <b>Правило произведения:</b> для зависимых событий $P(AB) = P(A) \cdot P(B|A)$,
+                    для независимых $P(AB) = P(A) \cdot P(B)$.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>4. Что такое независимые события? Приведите пример.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>События называются <b>независимыми</b>, если вероятность наступления одного не
+                    влияет на вероятность другого. <b>Пример:</b> изменение цены на акции
+                    технологической компании в США и количество осадков в сельском хозяйстве
+                    Узбекистана.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>5. Что такое условная вероятность и как она вычисляется?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Условная вероятность</b> — это вероятность события $A$, вычисленная при
+                    условии, что событие $B$ уже произошло. Вычисляется по формуле: $P(A|B) =
+                    \frac{P(AB)}{P(B)}$, где $P(B) > 0$.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>6. Сформулируйте и объясните формулу полной вероятности.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Формула полной вероятности</b> позволяет найти вероятность события $A$,
+                    которое может произойти только вместе с одной из <b>гипотез</b> $H_i$: $P(A) =
+                    \sum P(H_i) \cdot P(A|H_i)$. Она суммирует вероятности всех возможных путей
+                    реализации события.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>7. Как формула полной вероятности применяется для анализа кредитных
+                    рисков?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>В анализе <b>кредитных рисков</b> событие $A$ (невозврат кредита) может зависеть
+                    от состояния экономики (гипотезы $H_1$ — рост, $H_2$ — кризис). Формула
+                    позволяет оценить <b>общий риск дефолта</b> портфеля с учетом вероятности
+                    наступления каждого сценария.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>8. Что представляет собой формула Байеса и где она применяется?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Формула Байеса</b> позволяет переоценить вероятности гипотез после того, как
+                    стало известно, что событие $A$ уже произошло: $P(H_i|A) =
+                    \frac{P(H_i)P(A|H_i)}{P(A)}$. Применяется для <b>уточнения прогнозов</b> при
+                    получении новой рыночной информации.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>9. Последовательность независимых экспериментов и формула Бернулли.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Схема Бернулли</b> описывает серию из $n$ независимых испытаний с двумя
+                    исходами (успех/неудача). <b>Формула Бернулли:</b> $P_n(k) = C_n^k p^k q^{n-k}$
+                    находит вероятность того, что успех наступит ровно $k$ раз.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>10. Какие типы случайных событий используются при моделировании рыночных
+                    рисков?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Используются <b>дискретные</b> (дефолт эмитента, изменение рейтинга) и
+                    <b>непрерывные</b> события (колебания цен активов, волатильность). Также
+                    выделяют <b>экстремальные события</b> («черные лебеди»), имеющие малую
+                    вероятность, но огромный ущерб.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>11. Почему при прогнозировании в экономике важно учитывать зависимость
+                    событий?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Игнорирование <b>зависимости</b> ведет к недооценке <b>системного риска</b>. В
+                    экономике события часто взаимосвязаны (эффект домино): падение одной отрасли
+                    может вызвать кризис в смежных отраслях.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>12. Что такое случайная величина и как она задается?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Случайная величина (СВ)</b> — это переменная, которая принимает числовые
+                    значения в зависимости от исхода опыта. Задается <b>законом распределения</b>
+                    (таблицей, рядом распределения, функцией или плотностью).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>13. Объясните различие между дискретной и непрерывной случайной
+                    величиной.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Дискретная СВ</b> принимает отдельные значения из счетного множества
+                    (количество сделок). <b>Непрерывная СВ</b> может принимать любые значения из
+                    некоторого интервала (годовой доход, цена золота).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>14. Какие параметры характеризуют дискретную случайную величину?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Основными параметрами являются: <b>математическое ожидание</b> (среднее
+                    значение), <b>дисперсия</b> (квадрат разброса), <b>среднее квадратическое
+                        отклонение</b> и <b>мода</b> (наиболее вероятное значение).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>15. В чём состоит принцип моделирования экономических показателей как
+                    непрерывных величин?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Принцип основан на использовании <b>функции плотности вероятности</b>. Считается,
+                    что значения показателя распределены бесконечно плотно (например, время или
+                    доход), что позволяет использовать методы <b>интегрального исчисления</b> для
+                    оценки вероятностей.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>16. Что показывает функция распределения $F(x)$ в экономических
+                    задачах?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Функция распределения</b> показывает вероятность того, что значение показателя
+                    $X$ будет <b>меньше</b> заданного числа $x$. Например, вероятность того, что
+                    убытки компании не превысят миллион рублей.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>17. Как плотность распределения используется при оценке доходностей
+                    активов?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Плотность распределения $f(x)$</b> позволяет вычислить вероятность попадания
+                    доходности в заданный интервал. Площадь под графиком плотности на участке $[a,
+                    b]$ — это вероятность того, что <b>прибыль</b> составит от $a$ до $b$.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>18. Дайте определение математического ожидания и дисперсии.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Мат. ожидание $E(X)$</b> — средневзвешенное значение СВ, центр распределения.
+                    <b>Дисперсия $D(X)$</b> — средний квадрат отклонения величины от её ожидания,
+                    мера <b>изменчивости</b> и риска.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>19. Определите биномиальное распределение и его параметры.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Биномиальное распределение</b> — распределение числа успехов в серии испытаний
+                    Бернулли. <b>Параметры:</b> $n$ (общее число испытаний) и $p$ (вероятность
+                    успеха в одном испытании).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>20. Что описывает распределение Пуассона?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Распределение Пуассона</b> описывает количество <b>редких событий</b>,
+                    произошедших за фиксированный интервал времени или пространства. Пример: число
+                    страховых случаев в месяц или число заходов покупателей в магазин в час.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>21. В чем заключается смысл предельных теорем для экономики?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Они объясняют, почему при агрегировании большого количества малых случайных
+                    факторов поведение системы становится <b>предсказуемым</b>. Это фундамент для
+                    перехода от индивидуального поведения к <b>рыночным закономерностям</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>22. Что такое центральная предельная теорема (ЦПТ) и её значение?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>ЦПТ</b> утверждает, что сумма или среднее значение большого числа независимых
+                    СВ распределены <b>нормально</b>. Она позволяет использовать нормальное
+                    распределение даже если исходные данные распределены иначе.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>23. Как ЦПТ обосновывает использование нормального распределения в
+                    эконометрике?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Поскольку <b>ошибка регрессии</b> является результатом влияния множества
+                    неучтенных факторов, согласно ЦПТ, эта ошибка должна иметь <b>нормальное
+                        распределение</b>, что критически важно для проверки гипотез.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>24. Приведите пример экономической задачи, где работает ЦПТ.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Формирование спроса:</b> общий объем покупок хлеба в городе за день — это
+                    сумма тысяч мелких независимых решений горожан. Итог этой суммы будет
+                    подчиняться <b>нормальному закону</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>25. Почему закон больших чисел важен для анализа средней выручки?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>ЗБЧ</b> гарантирует, что при большом числе покупателей выборочная <b>средняя
+                        выручка</b> будет очень близка к истинному среднему. Это делает финансовое
+                    планирование стабильным и точным.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>26. Неравенство Чебышева и его экономическое применение.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Неравенство Чебышева</b> дает верхнюю границу вероятности того, что СВ
+                    отклонится от среднего. Используется для <b>гарантированной оценки рисков</b>,
+                    когда точный закон распределения неизвестен.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>27. Что такое генеральная совокупность и выборка?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Генеральная совокупность</b> — все потенциально возможные объекты
+                    исследования. <b>Выборка</b> — подмножество объектов, реально отобранных для
+                    наблюдения и анализа.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>28. Что такое точечная оценка и какими свойствами она должна обладать?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Точечная оценка</b> — это конкретное число, оценивающее параметр. Свойства:
+                    <b>несмещенность</b> (ожидание оценки равно параметру), <b>эффективность</b>
+                    (минимальная дисперсия), <b>состоятельность</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>29. Почему выборочные оценки необходимы при анализе неопределённости?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>В экономике невозможно изучить все объекты (например, опросить всех
+                    потребителей). Выборка позволяет с определенной <b>точностью и надежностью</b>
+                    судить о всей совокупности в условиях <b>неполной информации</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>30. Как построить доверительный интервал для математического ожидания?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Используется формула: $\bar{x} \pm z \cdot \frac{\sigma}{\sqrt{n}}$ (при
+                    известной дисперсии) или $\bar{x} \pm t \cdot \frac{s}{\sqrt{n}}$ (при
+                    неизвестной, с использованием критерия Стьюдента). Это <b>диапазон</b>,
+                    накрывающий истинное значение с заданной вероятностью.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>31. Почему ширина доверительного интервала зависит от объёма выборки?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Ширина интервала обратно пропорциональна $\sqrt{n}$. Чем <b>больше объем
+                        выборки</b>, тем меньше <b>стандартная ошибка</b> среднего, и тем точнее
+                    (уже) наш прогноз.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>32. Что представляет собой нулевая гипотеза в экономическом
+                    исследовании?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Нулевая гипотеза ($H_0$)</b> — утверждение об отсутствии эффекта, связи или
+                    различий. Например: «изменение налоговой ставки не повлияло на объем
+                    инвестиций».</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>33. Какова роль p-value при проверке статистических гипотез?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>P-value</b> — это вероятность получить такие же или более сильные отклонения
+                    при условии верности $H_0$. Если $p < 0.05$, мы <b>отвергаем нулевую
+                        гипотезу</b> как неправдоподобную.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>34. Как t-критерий используется для проверки гипотез о прибыли?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>T-критерий Стьюдента</b> используется для сравнения средних значений прибыли в
+                    двух группах или проверки того, значимо ли средняя прибыль отличается от
+                    <b>прогнозного значения</b> на малых выборках.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>35. В чём преимущества непараметрических критериев?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Они не требуют предположения о <b>нормальности распределения</b> данных. Это
+                    важно для экономических показателей с «тяжелыми хвостами» или при наличии
+                    большого количества <b>выбросов</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>36. Что означает корреляция между двумя экономическими показателями?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Корреляция</b> — статистическая взаимосвязь между величинами. Положительная
+                    означает одновременный рост, отрицательная — рост одной при падении другой.
+                    <b>Важно:</b> корреляция не означает причинно-следственную связь.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>37. Как с помощью ковариационной матрицы оценить риск портфеля?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Ковариационная матрица</b> содержит информацию о волатильности каждого актива
+                    и связях между ними. С её помощью находят <b>совокупный риск портфеля</b>,
+                    учитывая эффект диверсификации.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>38. Объясните роль анализа данных в экономической стратегии.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Анализ данных позволяет перейти от интуитивных решений к <b>доказательной
+                        стратегии</b>. Он помогает находить скрытые рыночные ниши, оптимизировать
+                    издержки и предсказывать <b>поведение конкурентов</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>39. Как визуализация помогает выявлять аномалии?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>С помощью <b>графиков (диаграммы рассеяния, ящики с усами)</b> можно мгновенно
+                    увидеть точки, выпадающие из общего тренда. Это могут быть ошибки ввода или
+                    уникальные рыночные события (<b>выбросы</b>).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>40. В чем заключается цель очистки данных?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Цель — устранение <b>«шума»</b>: пропусков, дубликатов и неверных значений.
+                    Чистые данные критически важны, так как низкое качество входа ведет к
+                    <b>ошибочным моделям</b> (принцип GIGO — Garbage In, Garbage Out).</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>41. Что такое модель классификации в машинном обучении?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Алгоритм, который присваивает объекту определенную <b>категорию</b>. В экономике
+                    это: «вернет кредит / не вернет», «уйдет клиент / останется».</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>42. Как алгоритмы машинного обучения прогнозируют спрос?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Они анализируют <b>исторические данные</b>, учитывая сезонность, цены
+                    конкурентов, праздники и погодные условия, находя сложные <b>нелинейные
+                        закономерности</b>, недоступные классической статистике.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>43. Приведите пример задачи кластеризации в экономике.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Сегментация клиентской базы</b>: автоматическое разделение покупателей на
+                    группы (например, «экономные», «лояльные», «премиум») для разработки
+                    <b>таргетированного маркетинга</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>44. Какие преимущества даёт автоматизация анализа данных?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Скорость обработки огромных массивов информации (Big Data), исключение
+                    <b>человеческого фактора</b> (ошибок) и возможность проводить анализ в режиме
+                    <b>реального времени</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>45. Каково содержание признаков в моделях машинного обучения?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Признаки (фичи)</b> — это характеристики объектов (доход клиента, возраст,
+                    средний чек). Их экономический смысл определяет <b>интерпретируемость модели</b>
+                    и качество прогноза.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>46. Что такое теорема Леви?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Это классическая форма <b>ЦПТ</b> для последовательности независимых одинаково
+                    распределенных СВ с конечной дисперсией. Она гарантирует сходимость к
+                    <b>нормальному распределению</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>47. Параметрические статистические методы проверки гипотез.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Методы, которые опираются на предположение о том, что данные следуют
+                    определенному <b>известному распределению</b> (обычно нормальному). К ним
+                    относятся <b>Z-тест, t-тест, F-тест</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>48. Что описывает односторонний доверительный интервал?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Он ограничивает параметр только с <b>одной стороны</b> (сверху или снизу).
+                    Например, когда нам важно знать только <b>максимально возможный уровень
+                        убытков</b> с вероятностью 95%.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>49. Характеристики точечных оценок: несмещенность.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Несмещенность</b> означает, что при многократном повторении эксперимента
+                    среднее значение всех полученных оценок будет в точности равно <b>истинному
+                        значению</b> параметра.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>50. Проверка гипотез о дисперсиях.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Часто используется <b>F-критерий Фишера</b>. В экономике это нужно для сравнения
+                    <b>рискованности</b> двух финансовых инструментов (активов) через сравнение их
+                    волатильности.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>51. Пример предварительной обработки данных.</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p><b>Масштабирование:</b> приведение дохода (в миллионах) и возраста (в десятках) к
+                    единой шкале $[0, 1]$. Без этого модель может «подумать», что доход важнее
+                    возраста просто из-за <b>величины чисел</b>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="question-header">
+                <span>52. Что такое генеральная совокупность в опросах?</span>
+                <span class="icon">▸</span>
+            </div>
+            <div class="answer-content">
+                <p>Если мы исследуем предпочтения молодежи Узбекистана, то <b>генеральная
+                        совокупность</b> — это абсолютно все граждане страны в возрасте от 18 до 30
+                    лет.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span>© 2025 Flayzex, Inc.</span>
+    </footer>
+
+    <script src="../static/js/dark-theme.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/accordion.js"></script>
+
+
+</body>
+
+</html>
